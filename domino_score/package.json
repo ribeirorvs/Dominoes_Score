@@ -11,8 +11,8 @@
   "jest": {
     "preset": "jest-expo",
     "moduleNameMapper": {
-      "\\.png$": "identity-obj-proxy",
-      "\\.(css|less)$": "./src/__mocks__/fileMock.js"
+      "\\.png$": "jest-transform-stub",
+      "\\.(css|less)$": "identity-obj-proxy"
     }
   },
   "dependencies": {
