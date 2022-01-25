@@ -4,7 +4,8 @@ import renderer from 'react-test-renderer';
 import { Home } from '../../src/pages/Home';
 
 const home = renderer.create(<Home />).toJSON();
-const players = home.children[0];
+const homeStyle = home.props.style;
+const players = home.children[1];
 const pair1 = players.children[0];
 const pair1Player1 = pair1.children[0];
 const pair1VerticalLine = pair1.children[1];
@@ -14,16 +15,23 @@ const pair2Player1 = pair2.children[0];
 const pair2VerticalLine = pair2.children[1];
 const pair2Player2 = pair2.children[2];
 
-//console.log(home.children[0]);
+//console.log(home.props.style.flex);
 
 // Test if the home.tsx is created
 describe('Check if home view exist', () => {
     it('has 1 container view', () => {
         expect(home.type).toBe('View');
     })
+    it('Check the background image of the page', () => {
+        expect(home.children[0].type).toBe('Image')
+        expect(home.children[0].props.style).not.toBe(undefined)
+        expect(home.children[0].props.style.flex).toBe('1')
+        expect(home.children[0].props.style.width).toBe(null)
+        expect(home.children[0].props.style.height).toBe(null)
+    })
 })
 
-//Test the players view, the first element in the home page
+//Test the players view, the second element in the home page
 describe('Check players view', () => {
     it('The home has a view child to players as the first child', () => {
         expect(players.type).toBe('View');
@@ -47,6 +55,9 @@ describe('Check the pair1 view', () => {
         expect(pair1Player2.type).toBe('Text');
     })
 })
+
+//Test the pair1 view styles
+//describe('Check if the pair')
 
 //Test the pair2 view, the second element in the players view
 describe('Check the pair2 view', () => {
