@@ -16,7 +16,7 @@ const pair2Player1 = pair2.children[0];
 const pair2VerticalLine = pair2.children[1];
 const pair2Player2 = pair2.children[2];
 
-console.log(players);
+//console.log(players);
 
 // Test if the home.tsx is created
 describe('Check if home view exist', () => {
@@ -68,7 +68,7 @@ describe('Check the pair1 view', () => {
     it('Check the pair1 styles', () => {
         expect(pair1.props.style).not.toBe(undefined)
         expect(pair1.props.style.flexDirection).toBe('row')
-        expect(pair1.props.style.border).toBe(2)
+        expect(pair1.props.style.borderWidth).toBe(2)
         expect(pair1.props.style.borderRadius).toBe(10)
         expect(pair1.props.style.borderColor).toBe('#000000')
         expect(pair1.props.style.width).toBe(150)
@@ -92,5 +92,16 @@ describe('Check the pair2 view', () => {
         expect(pair2Player1.type).toBe('Text');
         expect(pair2VerticalLine.type).toBe('View');
         expect(pair2Player2.type).toBe('Text');
+    })
+    it('Check the pair2 styles', () => {
+        expect(pair2.props.style).not.toBe(undefined)
+        expect(pair2.props.style.flexDirection).toBe('row')
+        expect(pair2.props.style.borderWidth).toBe(2)
+        expect(pair2.props.style.borderRadius).toBe(10)
+        expect(pair2.props.style.borderColor).toBe('#000000')
+        expect(pair2.props.style.width).toBe(150)
+        expect(pair2.props.style.height).toBe(77)
+        expect(pair2.props.style.paddingHorizontal).toBe(10)
+        expect(pair2.props.style.backgroundColor).toBe('#ffffff')
     })
 })
