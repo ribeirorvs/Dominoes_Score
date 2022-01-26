@@ -12,18 +12,19 @@ export const layout = StyleSheet.create({
     content: {
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center',
     },
     players: {
+        marginTop: 85,
         paddingHorizontal: 20,
         width: '100%',
         height: 85,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     pair: {
         flexDirection: 'row',
-        borderWidth: 2,
+        borderWidth: 3,
         borderRadius: 10,
         borderColor: '#000000',
         width: 150,

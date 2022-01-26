@@ -49,6 +49,8 @@ describe('Check players view', () => {
         expect(players.props.style.height).toBe(85)
         expect(players.props.style.paddingHorizontal).toBe(20)
         expect(players.props.style.flexDirection).toBe('row')
+        expect(players.props.style.justifyContent).toBe('space-between')
+        expect(players.props.style.marginTop).toBe(85)
     })
 })
 
@@ -68,7 +70,7 @@ describe('Check the pair1 view', () => {
     it('Check the pair1 styles', () => {
         expect(pair1.props.style).not.toBe(undefined)
         expect(pair1.props.style.flexDirection).toBe('row')
-        expect(pair1.props.style.borderWidth).toBe(2)
+        expect(pair1.props.style.borderWidth).toBe(3)
         expect(pair1.props.style.borderRadius).toBe(10)
         expect(pair1.props.style.borderColor).toBe('#000000')
         expect(pair1.props.style.width).toBe(150)
@@ -96,7 +98,7 @@ describe('Check the pair2 view', () => {
     it('Check the pair2 styles', () => {
         expect(pair2.props.style).not.toBe(undefined)
         expect(pair2.props.style.flexDirection).toBe('row')
-        expect(pair2.props.style.borderWidth).toBe(2)
+        expect(pair2.props.style.borderWidth).toBe(3)
         expect(pair2.props.style.borderRadius).toBe(10)
         expect(pair2.props.style.borderColor).toBe('#000000')
         expect(pair2.props.style.width).toBe(150)

@@ -14,7 +14,7 @@ export function Home() {
                             <View></View>
                             <Text>Player 2</Text>
                         </View>
-                        <View>
+                        <View style={layout.pair}>
                             <Text>Player 1</Text>
                             <View></View>
                             <Text>Player 2</Text>
