@@ -7,8 +7,8 @@ export function Home() {
     return (
         <View style={layout.container}>
             <ImageBackground source={backgroundImage} style={layout.backgroundImage}>
-                <View style={layout.container}>
-                    <View>
+                <View style={layout.content}>
+                    <View style={layout.players}>
                         <View>
                             <Text>Player 1</Text>
                             <View></View>
