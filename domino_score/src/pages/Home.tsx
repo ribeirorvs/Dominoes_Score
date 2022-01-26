@@ -9,7 +9,7 @@ export function Home() {
             <ImageBackground source={backgroundImage} style={layout.backgroundImage}>
                 <View style={layout.content}>
                     <View style={layout.players}>
-                        <View>
+                        <View style={layout.pair}>
                             <Text>Player 1</Text>
                             <View></View>
                             <Text>Player 2</Text>
