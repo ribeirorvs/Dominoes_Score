@@ -16,7 +16,7 @@ const pair2Player1 = pair2.children[0];
 const pair2VerticalLine = pair2.children[1];
 const pair2Player2 = pair2.children[2];
 
-//console.log(players.children[0]);
+console.log(players);
 
 // Test if the home.tsx is created
 describe('Check if home view exist', () => {
@@ -29,7 +29,7 @@ describe('Check if home view exist', () => {
     })
     it('Check the background image of the page', () => {
         expect(backgroundImage.type).toBe('Image')
-        expect(home.children[0].props.style).not.toBe(undefined)
+        expect(backgroundImage.props.style).not.toBe(undefined)
         expect(home.children[0].props.style.flex).toBe(1)
         expect(home.children[0].props.style.width).toBe('100%')
     })
@@ -42,6 +42,12 @@ describe('Check players view', () => {
     })
     it('The players view must have two other views, each for one player pair', () => {
         expect(players.children.length).toBe(2);
+    })
+    it('Check the players view style', () => {
+        expect(players.props.style).not.toBe(undefined)
+        expect(players.props.style.width).toBe('100%')
+        expect(players.props.style.height).toBe(85)
+        expect(players.props.style.paddingHorizontal).toBe(20)
     })
 })
 
