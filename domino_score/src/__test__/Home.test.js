@@ -48,6 +48,7 @@ describe('Check players view', () => {
         expect(players.props.style.width).toBe('100%')
         expect(players.props.style.height).toBe(85)
         expect(players.props.style.paddingHorizontal).toBe(20)
+        expect(players.props.style.flexDirection).toBe('row')
     })
 })
 
@@ -63,6 +64,17 @@ describe('Check the pair1 view', () => {
         expect(pair1Player1.type).toBe('Text');
         expect(pair1VerticalLine.type).toBe('View');
         expect(pair1Player2.type).toBe('Text');
+    })
+    it('Check the pair1 styles', () => {
+        expect(pair1.props.style).not.toBe(undefined)
+        expect(pair1.props.style.flexDirection).toBe('row')
+        expect(pair1.props.style.border).toBe(2)
+        expect(pair1.props.style.borderRadius).toBe(10)
+        expect(pair1.props.style.borderColor).toBe('#000000')
+        expect(pair1.props.style.width).toBe(150)
+        expect(pair1.props.style.height).toBe(77)
+        expect(pair1.props.style.paddingHorizontal).toBe(10)
+        expect(pair1.props.style.backgroundColor).toBe('#ffffff')
     })
 })
 
