@@ -5,8 +5,9 @@ import { Home } from '../../src/pages/Home';
 
 const home = renderer.create(<Home />).toJSON();
 const backgroundImage = home.children[0].children[0];
-const homeStyle = home.props.style;
 const players = home.children[0].children[1].children[0];
+const scores = home.children[0].children[1].children[1];
+const scorePair1 = scores.children[0];
 const pair1 = players.children[0];
 const pair1Player1 = pair1.children[0];
 const pair1VerticalLine = pair1.children[1];
@@ -24,8 +25,8 @@ describe('Check if home view exist', () => {
         expect(home.type).toBe('View');
     })
     it('Check the home view style', () => {
-        expect(homeStyle).not.toBe(undefined);
-        expect(homeStyle.flex).toBe(1);
+        expect(home.props.style).not.toBe(undefined);
+        expect(home.props.style.flex).toBe(1);
     })
     it('Check the background image of the page', () => {
         expect(backgroundImage.type).toBe('Image')
@@ -73,9 +74,9 @@ describe('Check the pair1 view', () => {
         expect(pair1.props.style.borderWidth).toBe(3)
         expect(pair1.props.style.borderRadius).toBe(10)
         expect(pair1.props.style.borderColor).toBe('#000000')
-        expect(pair1.props.style.width).toBe(150)
+        expect(pair1.props.style.width).toBe(160)
         expect(pair1.props.style.height).toBe(77)
-        expect(pair1.props.style.paddingHorizontal).toBe(10)
+        expect(pair1.props.style.paddingHorizontal).toBe(15)
         expect(pair1.props.style.backgroundColor).toBe('#ffffff')
     })
 })
@@ -101,9 +102,49 @@ describe('Check the pair2 view', () => {
         expect(pair2.props.style.borderWidth).toBe(3)
         expect(pair2.props.style.borderRadius).toBe(10)
         expect(pair2.props.style.borderColor).toBe('#000000')
-        expect(pair2.props.style.width).toBe(150)
+        expect(pair2.props.style.width).toBe(160)
         expect(pair2.props.style.height).toBe(77)
-        expect(pair2.props.style.paddingHorizontal).toBe(10)
+        expect(pair2.props.style.paddingHorizontal).toBe(15)
         expect(pair2.props.style.backgroundColor).toBe('#ffffff')
+        expect(pair2.props.style.justifyContent).toBe('space-between')
+        expect(pair2.props.style.alignItems).toBe('center')
+    })
+})
+
+//Test pair player 1 styles
+describe('Check the pair 1 player 1 text', () => {
+    it('Check pair 1 player 1 styles', () => {
+        expect(pair1Player1.props.style.fontSize).toBe(14)
+    })
+})
+
+//Test score view
+describe('Check scores view', () => {
+    it('Check if the score view existe in the home', () => {
+        expect(scores.type).toBe('View')
+    })
+    it('Check if the scores view must have two other views, each for one player pair score', () => {
+        expect(scores.children.length).toBe(2);
+    })
+    it('Check the scores view style', () => {
+        expect(scores.props.style).not.toBe(undefined)
+        expect(scores.props.style.width).toBe('100%')
+        expect(scores.props.style.height).toBe(90)
+        expect(scores.props.style.paddingHorizontal).toBe(40)
+        expect(scores.props.style.flexDirection).toBe('row')
+        expect(scores.props.style.justifyContent).toBe('space-between')
+        expect(scores.props.style.marginTop).toBe(43)
+    })
+})
+
+//Test the pair 1 score
+describe('Check the pair 1 score view', () => {
+    it('Check if the pair 1 score view existe', () => {
+        expect(scorePair1.type).toBe('View')
+    })
+    it('Check if all elements is present in the pair 1 score view', () => {
+        //The score must have 7 children
+        expect(scorePair1.children.length).toBe(7)
+
     })
 })
