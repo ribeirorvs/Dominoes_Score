@@ -21,6 +21,9 @@ export const layout = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
+    playerName: {
+        width: 50
+    },
     pair: {
         flexDirection: 'row',
         borderWidth: 3,
@@ -63,20 +66,15 @@ export const layout = StyleSheet.create({
         paddingLeft: 0,
         marginBottom: 22
     },
-    scorePair: {
-        justifyContent: 'flex-end'
-    },
     plusScore: {
-        marginBottom: 25,
-        marginLeft: -20,
         color: '#00ff00',
-        fontSize: 20
+        fontSize: 20,
+        paddingTop: 15,
     },
     minusScore: {
-        marginBottom: -80,
-        marginLeft: -16,
         color: '#ff0000',
-        fontSize: 20
+        fontSize: 20,
+        paddingTop: 15,
     },
     historicView: {
         marginTop: 40,
