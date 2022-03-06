@@ -49,6 +49,20 @@ export const layout = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
+    historicTitle: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        marginTop: 10,
+        alignItems: 'center'
+    },
+    winnerTitle: {
+        color: '#00ff00',
+        fontSize: 20
+    },
+    looserTitle: {
+        color: '#ff0000',
+        fontSize: 20
+    },
     point1: {
         paddingLeft: 37,
         marginBottom: 23
@@ -114,4 +128,8 @@ export const layout = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 3
     },
+    lambreta: {
+        color: '#ff0000',
+        fontSize: 17
+    }
 });

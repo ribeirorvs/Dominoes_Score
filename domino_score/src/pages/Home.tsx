@@ -19,10 +19,10 @@ export function Home() {
     const score = require('../img/cross.png');
     const point = require('../img/point.png');
     const [historicID, setHistoricID] = useState(0);
-    const [play1, setPlay1] = useState<string>('Player_1');
-    const [play2, setPlay2] = useState<string>('Player_2');
-    const [play3, setPlay3] = useState<string>('Player_3');
-    const [play4, setPlay4] = useState<string>('Player_4');
+    const [play1, setPlay1] = useState<string>('Jogador1');
+    const [play2, setPlay2] = useState<string>('Jogador2');
+    const [play3, setPlay3] = useState<string>('Jogador3');
+    const [play4, setPlay4] = useState<string>('Jogador4');
     const [pair1Score, setPair1Score] = useState(1);
     const [pair2Score, setPair2Score] = useState(1);
     const [pair1Point1, setPair1Point1] = useState(0);
@@ -302,6 +302,10 @@ export function Home() {
                         <Text style={layout.historic}>
                             Histórico
                         </Text>
+                    </View>
+                    <View style={layout.historicTitle}>
+                        <Text style={layout.winnerTitle}>Winners</Text>
+                        <Text style={layout.looserTitle}>Loosers</Text>
                     </View>
                     <ScrollView>
                         <FlatList

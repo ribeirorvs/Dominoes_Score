@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { layout } from '../styles/layout';
+import { points } from '../assets/images'
 
 
 export interface HitoricResultProps {
@@ -8,7 +9,7 @@ export interface HitoricResultProps {
     winnerPlayer2: string,
     looserPlayer1: string,
     looserPlayer2: string,
-    looserScore?: number,
+    looserScore: number,
     key?: number
 }
 
@@ -20,10 +21,6 @@ export function HistoricResult({
     looserScore,
     ...rest
 }: HitoricResultProps) {
-    const result1 = require('../img/result1.png');
-    const result2 = require('../img/result2.png');
-    const result3 = require('../img/result3.png');
-    const result4 = require('../img/result4.png');
     return (
         <View style={layout.resultHistoric}>
             <View style={layout.pairWinner}>
@@ -35,7 +32,7 @@ export function HistoricResult({
                 <View style={layout.verticalLine}></View>
                 <View style={layout.winner}>
                     <Text style={layout.hisotricTitle}>Pontuação</Text>
-                    <Image source={result4} />
+                    <Image source={points[5]} />
                 </View>
             </View>
             <View style={layout.pairWinner}>
@@ -47,7 +44,9 @@ export function HistoricResult({
                 <View style={layout.verticalLine}></View>
                 <View style={layout.winner}>
                     <Text style={layout.hisotricTitle}>Pontuação</Text>
-                    <Text>Lambreta</Text>
+                    {
+                        looserScore == 1 ? <Text style={layout.lambreta}>Lambreta</Text> : <Image source={points[looserScore]} />
+                    }
                 </View>
             </View>
         </View>
