@@ -52,19 +52,23 @@ export const layout = StyleSheet.create({
     point1: {
         justifyContent: 'center',
         paddingLeft: 37,
-        marginBottom: 23
+        marginBottom: 23,
+        opacity: 0
     },
     point2: {
         paddingLeft: 75,
-        marginBottom: -15
+        marginBottom: -15,
+        opacity: 0
     },
     point3: {
         paddingLeft: 37,
-        marginBottom: -90
+        marginBottom: -90,
+        opacity: 0
     },
     point4: {
         paddingLeft: 0,
-        marginBottom: 22
+        marginBottom: 22,
+        opacity: 0
     },
     plusScore: {
         color: '#00ff00',

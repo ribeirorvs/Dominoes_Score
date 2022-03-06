@@ -8,7 +8,7 @@ interface HitoricResultProps {
     winnerPlayer2: string,
     looserPlayer1: string,
     looserPlayer2: string,
-    looserScore?: string
+    looserScore?: number
 }
 
 export function HistoricResult({

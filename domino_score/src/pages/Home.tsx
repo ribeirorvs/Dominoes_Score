@@ -18,8 +18,8 @@ export function Home() {
     const [play2, setPlay2] = useState<string>('Player 2');
     const [play3, setPlay3] = useState<string>('Player 3');
     const [play4, setPlay4] = useState<string>('Player 4');
-    const [pair1Score, setPair1Score] = useState<string>();
-    const [pair2Score, setPair2Score] = useState<string>();
+    const [pair1Score, setPair1Score] = useState(0);
+    const [pair2Score, setPair2Score] = useState(0);
     return (
         <View style={layout.container}>
             <ImageBackground source={backgroundImage} style={layout.backgroundImage}>
