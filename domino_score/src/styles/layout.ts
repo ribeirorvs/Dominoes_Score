@@ -50,25 +50,20 @@ export const layout = StyleSheet.create({
         justifyContent: 'space-between'
     },
     point1: {
-        justifyContent: 'center',
         paddingLeft: 37,
-        marginBottom: 23,
-        opacity: 0
+        marginBottom: 23
     },
     point2: {
         paddingLeft: 75,
-        marginBottom: -15,
-        opacity: 0
+        marginBottom: -15
     },
     point3: {
         paddingLeft: 37,
-        marginBottom: -90,
-        opacity: 0
+        marginBottom: -90
     },
     point4: {
         paddingLeft: 0,
-        marginBottom: 22,
-        opacity: 0
+        marginBottom: 22
     },
     plusScore: {
         color: '#00ff00',
