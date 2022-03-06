@@ -20,6 +20,23 @@ export function Home() {
     const [play4, setPlay4] = useState<string>('Player 4');
     const [pair1Score, setPair1Score] = useState(0);
     const [pair2Score, setPair2Score] = useState(0);
+
+    function handlePlayers1Name(name: string) {
+        setPlay1(name)
+    }
+
+    function handlePlayers2Name(name: string) {
+        setPlay2(name)
+    }
+
+    function handlePlayers3Name(name: string) {
+        setPlay3(name)
+    }
+
+    function handlePlayers4Name(name: string) {
+        setPlay4(name)
+    }
+
     return (
         <View style={layout.container}>
             <ImageBackground source={backgroundImage} style={layout.backgroundImage}>
@@ -30,26 +47,42 @@ export function Home() {
                                 activeOpacity={0.1}
                                 onPress={() => console.log('test')}
                             >
-                                <TextInput style={layout.playerName}>{play1}</TextInput>
+                                <TextInput
+                                    style={layout.playerName}
+                                    value={play1}
+                                    onChangeText={handlePlayers1Name}
+                                />
                             </TouchableOpacity>
                             <View style={layout.verticalLine}></View>
                             <TouchableOpacity
                                 activeOpacity={0.1}
                             >
-                                <TextInput style={layout.playerName}>{play2}</TextInput>
+                                <TextInput
+                                    style={layout.playerName}
+                                    value={play2}
+                                    onChangeText={handlePlayers2Name}
+                                />
                             </TouchableOpacity>
                         </View>
                         <View style={layout.pair}>
                             <TouchableOpacity
                                 activeOpacity={0.1}
                             >
-                                <TextInput style={layout.playerName}>{play3}</TextInput>
+                                <TextInput
+                                    style={layout.playerName}
+                                    value={play3}
+                                    onChangeText={handlePlayers3Name}
+                                />
                             </TouchableOpacity>
                             <View style={layout.verticalLine}></View>
                             <TouchableOpacity
                                 activeOpacity={0.1}
                             >
-                                <TextInput style={layout.playerName}>{play4}</TextInput>
+                                <TextInput
+                                    style={layout.playerName}
+                                    value={play4}
+                                    onChangeText={handlePlayers4Name}
+                                />
                             </TouchableOpacity>
                         </View>
                     </View>
