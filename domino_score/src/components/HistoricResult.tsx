@@ -3,12 +3,13 @@ import { View, Text, Image } from 'react-native';
 import { layout } from '../styles/layout';
 
 
-interface HitoricResultProps {
+export interface HitoricResultProps {
     winnerPlayer1: string,
     winnerPlayer2: string,
     looserPlayer1: string,
     looserPlayer2: string,
-    looserScore?: number
+    looserScore?: number,
+    key?: number
 }
 
 export function HistoricResult({

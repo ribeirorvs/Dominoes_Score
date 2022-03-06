@@ -6,19 +6,23 @@ import {
     Image,
     TouchableOpacity,
     TextInput,
-    Alert
+    Alert,
+    FlatList,
+    ScrollView
 } from 'react-native';
 import { layout } from '../styles/layout';
-import { HistoricResult } from '../components/HistoricResult';
+import { HistoricResult, HitoricResultProps } from '../components/HistoricResult';
+
 
 export function Home() {
     const backgroundImage = require('../img/background.png');
     const score = require('../img/cross.png');
     const point = require('../img/point.png');
-    const [play1, setPlay1] = useState<string>('Player 1');
-    const [play2, setPlay2] = useState<string>('Player 2');
-    const [play3, setPlay3] = useState<string>('Player 3');
-    const [play4, setPlay4] = useState<string>('Player 4');
+    const [historicID, setHistoricID] = useState(0);
+    const [play1, setPlay1] = useState<string>('Player_1');
+    const [play2, setPlay2] = useState<string>('Player_2');
+    const [play3, setPlay3] = useState<string>('Player_3');
+    const [play4, setPlay4] = useState<string>('Player_4');
     const [pair1Score, setPair1Score] = useState(1);
     const [pair2Score, setPair2Score] = useState(1);
     const [pair1Point1, setPair1Point1] = useState(0);
@@ -29,6 +33,7 @@ export function Home() {
     const [pair2Point2, setPair2Point2] = useState(0);
     const [pair2Point3, setPair2Point3] = useState(0);
     const [pair2Point4, setPair2Point4] = useState(0);
+    const [historic, setHistoric] = useState<HitoricResultProps[]>([]);
 
     function handlePlayers1Name(name: string) {
         setPlay1(name)
@@ -46,8 +51,31 @@ export function Home() {
         setPlay4(name)
     }
 
+    function createNewHistoric(winner: string, looser: string, looserPoints: number) {
+        const winnerPlayers = winner.split(" ");
+        const looserPlayers = looser.split(" ");
+
+        setHistoricID(historicID + 1);
+        setHistoric([
+            {
+                winnerPlayer1: winnerPlayers[0],
+                winnerPlayer2: winnerPlayers[1],
+                looserPlayer1: looserPlayers[0],
+                looserPlayer2: looserPlayers[1],
+                looserScore: looserPoints,
+                key: historicID
+            },
+            ...historic
+        ]);
+        //historic.push(newHistoric);
+    }
+
     function clearPoints() {
         const winner = pair1Score > pair2Score ? play1 + ' ' + play2 : play3 + ' ' + play4;
+        const looser = pair1Score < pair2Score ? play1 + ' ' + play2 : play3 + ' ' + play4;
+        const looserScore = pair1Score > pair2Score ? pair2Score : pair1Score;
+        createNewHistoric(winner, looser, looserScore);
+        console.log(historic);
         setPair1Score(1);
         setPair2Score(1);
         setPair1Point1(0);
@@ -275,15 +303,20 @@ export function Home() {
                             Histórico
                         </Text>
                     </View>
-                    <View>
-                        <HistoricResult
-                            winnerPlayer1={play1}
-                            winnerPlayer2={play2}
-                            looserPlayer1={play3}
-                            looserPlayer2={play4}
-                            looserScore={pair1Score}
+                    <ScrollView>
+                        <FlatList
+                            data={historic}
+                            renderItem={({ item }) => (
+                                <HistoricResult
+                                    winnerPlayer1={item.winnerPlayer1}
+                                    winnerPlayer2={item.winnerPlayer2}
+                                    looserPlayer1={item.looserPlayer1}
+                                    looserPlayer2={item.looserPlayer2}
+                                    looserScore={item.looserScore}
+                                />
+                            )}
                         />
-                    </View>
+                    </ScrollView>
                 </View>
             </ImageBackground>
         </View>
