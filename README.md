@@ -22,6 +22,6 @@ The prototype of the app was created at this [Figma](https://www.figma.com/file/
 
 ## App information
 
-The app privacy policy can be found here: [Dominó Score APP Privacy Policy]()
+The app privacy policy can be found here: [Dominó Score APP Privacy Policy](https://middlewaredev.home.blog/2022/03/06/domino-score-app-privacy-policy/)
 
 The app is available in the Google Play Store here: [Dominó Score]()
