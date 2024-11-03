@@ -1,35 +1,33 @@
 {
   "expo": {
-    "name": "Pontuação de Dominó",
+    "name": "domino_score",
     "slug": "domino_score",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ffffff"
       },
-      "package": "com.middlewaredev.domino_score",
-      "versionCode": 2,
-      "permissions": []
+      "package": "com.middlewaredev.domino_score"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7ec68716-fd12-40f0-96a6-b351a663019a"
+      }
     }
   }
 }

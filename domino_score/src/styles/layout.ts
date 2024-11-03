@@ -22,19 +22,25 @@ export const layout = StyleSheet.create({
         justifyContent: 'space-between'
     },
     playerName: {
-        width: 50
+        textAlign: 'center',
+        fontSize: 14,
+        flexShrink: 1,
+        flexGrow: 1,
+        flexWrap: 'wrap'
     },
     pair: {
         flexDirection: 'row',
         borderWidth: 3,
         borderRadius: 10,
         borderColor: '#000000',
-        width: 160,
+        minWidth: 160,
         height: 77,
         paddingHorizontal: 15,
         backgroundColor: '#ffffff',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        flexGrow: 1,
+        maxWidth: '45%'
     },
     verticalLine: {
         borderWidth: 1,
@@ -59,25 +65,9 @@ export const layout = StyleSheet.create({
         color: '#00ff00',
         fontSize: 20
     },
-    looserTitle: {
+    loserTitle: {
         color: '#ff0000',
         fontSize: 20
-    },
-    point1: {
-        paddingLeft: 37,
-        marginBottom: 23
-    },
-    point2: {
-        paddingLeft: 75,
-        marginBottom: -15
-    },
-    point3: {
-        paddingLeft: 37,
-        marginBottom: -90
-    },
-    point4: {
-        paddingLeft: 0,
-        marginBottom: 22
     },
     plusScore: {
         color: '#00ff00',
@@ -113,17 +103,6 @@ export const layout = StyleSheet.create({
         width: 80,
         alignItems: 'center'
     },
-    pairWinner: {
-        flexDirection: 'row',
-        borderWidth: 3,
-        borderRadius: 10,
-        borderColor: '#000000',
-        width: 160,
-        height: 77,
-        backgroundColor: '#ffffff',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
     hisotricTitle: {
         fontWeight: 'bold',
         marginBottom: 3
@@ -131,5 +110,130 @@ export const layout = StyleSheet.create({
     lambreta: {
         color: '#ff0000',
         fontSize: 17
-    }
+    },
+    playerInputContainer: {
+        flex: 1,
+        maxWidth: '45%'
+    },
+    playerTouchableInput: {
+        width: '100%'
+    },
+    gameContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 20,
+    },
+    buttonContainer: {
+        flexDirection: 'column',
+        gap: 10,
+    },
+    button: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    addButton: {
+        borderColor: '#00FF00',
+    },
+    removeButton: {
+        borderColor: '#FF0000',
+    },
+    buttonText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    addButtonText: {
+        color: '#00FF00',
+    },
+    removeButtonText: {
+        color: '#FF0000',
+    },
+    crossContainer: {
+        width: 90,
+        height: 90,
+        position: 'relative',
+    },
+    vertical: {
+        position: 'absolute',
+        width: 5,
+        height: 90,
+        backgroundColor: 'white',
+        left: 42.5,
+    },
+    horizontal: {
+        position: 'absolute',
+        width: 90,
+        height: 5,
+        backgroundColor: 'white',
+        top: 42.5,
+    },
+    circle: {
+        position: 'absolute',
+        width: 20,
+        height: 20,
+        borderRadius: 10,
+        backgroundColor: 'white',
+    },
+    topCircle: {
+        top: -10,
+        left: 35,
+    },
+    rightCircle: {
+        top: 35,
+        right: -10,
+    },
+    bottomCircle: {
+        bottom: -10,
+        left: 35,
+    },
+    leftCircle: {
+        top: 35,
+        left: -10,
+    },
+    smallCrossContainer: {
+        width: 36,
+        height: 36,
+        position: 'relative',
+    },
+    smallVertical: {
+        position: 'absolute',
+        width: 2,
+        height: 36,
+        backgroundColor: 'black',
+        left: 17,
+    },
+    smallHorizontal: {
+        position: 'absolute',
+        width: 36,
+        height: 2,
+        backgroundColor: 'black',
+        top: 17,
+    },
+    smallCircle: {
+        position: 'absolute',
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        backgroundColor: 'black',
+    },
+    smallTopCircle: {
+        top: -4,
+        left: 14,
+    },
+    smallRightCircle: {
+        top: 14,
+        right: -4,
+    },
+    smallBottomCircle: {
+        bottom: -4,
+        left: 14,
+    },
+    smallLeftCircle: {
+        left: -8,
+        top: '50%',
+        transform: [{ translateY: -4 }],
+    },
 });

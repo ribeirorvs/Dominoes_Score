@@ -1,54 +1,49 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { layout } from '../styles/layout';
-import { points } from '../assets/images'
+import { Pair } from '../pages/Home';
+import { SmallCross } from './SmallCross';
 
-
-export interface HitoricResultProps {
-    winnerPlayer1: string,
-    winnerPlayer2: string,
-    looserPlayer1: string,
-    looserPlayer2: string,
-    looserScore: number,
-    key?: number
+export interface HistoricResultProps {
+    winnerPair: Pair;
+    loserPair: Pair;
+    key?: number;
 }
 
 export function HistoricResult({
-    winnerPlayer1,
-    winnerPlayer2,
-    looserPlayer1,
-    looserPlayer2,
-    looserScore,
-    ...rest
-}: HitoricResultProps) {
+    winnerPair,
+    loserPair
+}: HistoricResultProps) {
     return (
         <View style={layout.resultHistoric}>
-            <View style={layout.pairWinner}>
+            <View style={layout.pair}>
                 <View style={layout.winner}>
                     <Text style={layout.hisotricTitle}>Dupla</Text>
-                    <Text>{winnerPlayer1}</Text>
-                    <Text>{winnerPlayer2}</Text>
+                    <Text>{winnerPair.players[0].name}</Text>
+                    <Text>{winnerPair.players[1].name}</Text>
                 </View>
                 <View style={layout.verticalLine}></View>
                 <View style={layout.winner}>
                     <Text style={layout.hisotricTitle}>Pontuação</Text>
-                    <Image source={points[5]} />
+                    <SmallCross circles={4} />
                 </View>
             </View>
-            <View style={layout.pairWinner}>
+            <View style={layout.pair}>
                 <View style={layout.winner}>
                     <Text style={layout.hisotricTitle}>Dupla</Text>
-                    <Text>{looserPlayer1}</Text>
-                    <Text>{looserPlayer2}</Text>
+                    <Text>{loserPair.players[0].name}</Text>
+                    <Text>{loserPair.players[1].name}</Text>
                 </View>
                 <View style={layout.verticalLine}></View>
                 <View style={layout.winner}>
                     <Text style={layout.hisotricTitle}>Pontuação</Text>
                     {
-                        looserScore == 1 ? <Text style={layout.lambreta}>Lambreta</Text> : <Image source={points[looserScore]} />
+                        loserPair.score === 0 ? 
+                            <Text style={layout.lambreta}>Lambreta</Text> : 
+                            <SmallCross circles={loserPair.score as 1 | 2 | 3} />
                     }
                 </View>
             </View>
         </View>
-    )
+    );
 }
