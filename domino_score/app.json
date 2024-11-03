@@ -19,6 +19,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "versionCode": 2,
+      "permissions": [],
       "package": "com.middlewaredev.domino_score"
     },
     "web": {
