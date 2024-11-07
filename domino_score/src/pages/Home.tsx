@@ -27,8 +27,6 @@ interface GameState {
 
 interface GameImages {
     backgroundImage: any;
-    score: any;
-    point: any;
 }
 
 interface AlertButton {
@@ -38,9 +36,7 @@ interface AlertButton {
 
 export function Home() {
     const images: GameImages = {
-        backgroundImage: require('../img/background.png'),
-        score: require('../img/cross.png'),
-        point: require('../img/point.png'),
+        backgroundImage: require('../img/background.png')
     }
 
     const [gameState, setGameState] = useState<GameState>({

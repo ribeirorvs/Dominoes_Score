@@ -24,23 +24,22 @@ export const layout = StyleSheet.create({
     playerName: {
         textAlign: 'center',
         fontSize: 14,
+        width: '100%',
         flexShrink: 1,
         flexGrow: 1,
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
     },
     pair: {
         flexDirection: 'row',
         borderWidth: 3,
         borderRadius: 10,
         borderColor: '#000000',
-        minWidth: 160,
+        width: '48%',
         height: 77,
         paddingHorizontal: 15,
         backgroundColor: '#ffffff',
         justifyContent: 'space-between',
         alignItems: 'center',
-        flexGrow: 1,
-        maxWidth: '45%'
     },
     verticalLine: {
         borderWidth: 1,
@@ -92,7 +91,6 @@ export const layout = StyleSheet.create({
         textAlign: 'center'
     },
     resultHistoric: {
-        marginTop: 15,
         paddingHorizontal: 20,
         width: '100%',
         height: 85,
@@ -100,16 +98,19 @@ export const layout = StyleSheet.create({
         justifyContent: 'space-between'
     },
     winner: {
-        width: 80,
-        alignItems: 'center'
+        flex: 1,
+        width: '45%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     hisotricTitle: {
+        fontSize: 12,
         fontWeight: 'bold',
         marginBottom: 3
     },
     lambreta: {
         color: '#ff0000',
-        fontSize: 17
+        fontSize: 14
     },
     playerInputContainer: {
         flex: 1,
@@ -194,46 +195,46 @@ export const layout = StyleSheet.create({
         left: -10,
     },
     smallCrossContainer: {
-        width: 36,
-        height: 36,
+        width: 30,
+        height: 30,
         position: 'relative',
     },
     smallVertical: {
         position: 'absolute',
         width: 2,
-        height: 36,
+        height: 30,
         backgroundColor: 'black',
-        left: 17,
+        left: 14,
     },
     smallHorizontal: {
         position: 'absolute',
-        width: 36,
+        width: 30,
         height: 2,
         backgroundColor: 'black',
-        top: 17,
+        top: 14,
     },
     smallCircle: {
         position: 'absolute',
-        width: 8,
-        height: 8,
-        borderRadius: 4,
+        width: 6,
+        height: 6,
+        borderRadius: 3,
         backgroundColor: 'black',
     },
     smallTopCircle: {
-        top: -4,
-        left: 14,
+        top: -3,
+        left: 12,
     },
     smallRightCircle: {
-        top: 14,
-        right: -4,
+        top: 12,
+        right: -3,
     },
     smallBottomCircle: {
-        bottom: -4,
-        left: 14,
+        bottom: -3,
+        left: 12,
     },
     smallLeftCircle: {
-        left: -8,
+        left: -3,
         top: '50%',
-        transform: [{ translateY: -4 }],
+        transform: [{ translateY: -3 }],
     },
 });
