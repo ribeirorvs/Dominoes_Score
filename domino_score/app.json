@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "domino_score",
+    "name": "Pontuação de Dominó",
     "slug": "domino_score",
     "version": "1.0.0",
     "orientation": "default",
@@ -30,6 +30,15 @@
       "eas": {
         "projectId": "7ec68716-fd12-40f0-96a6-b351a663019a"
       }
-    }
+    },
+    "plugins": [
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-7741095033756636~1670859290"
+        }
+      ],
+      "expo-build-properties"
+    ]
   }
 }

@@ -222,8 +222,8 @@ export function Home() {
                         </Text>
                     </View>
                     <View style={layout.historicTitle}>
-                        <Text style={layout.winnerTitle}>Winners</Text>
-                        <Text style={layout.loserTitle}>losers</Text>
+                        <Text style={layout.winnerTitle}>Vitórias</Text>
+                        <Text style={layout.loserTitle}>Derrotas</Text>
                     </View>
                     <FlatList
                         data={historic}
