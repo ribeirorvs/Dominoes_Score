@@ -2,8 +2,8 @@
   "expo": {
     "name": "Pontuação de Dominó",
     "slug": "domino_score",
-    "version": "1.0.0",
-    "orientation": "default",
+    "version": "1.3.0",
+    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -19,7 +19,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "versionCode": 2,
       "permissions": [],
       "package": "com.middlewaredev.domino_score"
     },

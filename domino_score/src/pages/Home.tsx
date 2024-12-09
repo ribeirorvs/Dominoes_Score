@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
     Text,
     View,
@@ -11,6 +11,7 @@ import {
 import { layout } from '../styles/layout';
 import { HistoricResult, HistoricResultProps } from '../components/HistoricResult';
 import { CrossWithButtons } from '../components/CrossWithButtons';
+import { BannerAd, BannerAdSize, TestIds, useForeground } from 'react-native-google-mobile-ads';
 
 interface Player {
     name: string;
@@ -33,6 +34,8 @@ interface AlertButton {
     text: string;
     onPress: () => void;
 }
+
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-7741095033756636/9343680194';
 
 export function Home() {
     const images: GameImages = {
@@ -61,6 +64,7 @@ export function Home() {
     const [historicID, setHistoricID] = useState(0);
     const [historic, setHistoric] = useState<HistoricResultProps[]>([]);
     const [crossReset, setCrossReset] = useState(false);
+    const bannerRef = useRef<BannerAd>(null);
 
     function handlePlayersName(name: string, playerIndex: number, pairIndex: number) {
         setGameState(prevState => ({
@@ -236,6 +240,13 @@ export function Home() {
                     />
                 </View>
             </ImageBackground>
+            <View style={layout.BannerAdFooter}>
+                <BannerAd 
+                    ref={bannerRef}
+                    unitId={adUnitId}
+                    size={BannerAdSize.BANNER}
+                />
+            </View>
         </View>
     );
 }

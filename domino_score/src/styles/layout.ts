@@ -237,4 +237,11 @@ export const layout = StyleSheet.create({
         top: '50%',
         transform: [{ translateY: -3 }],
     },
+    BannerAdFooter: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignContent: 'center',
+        backgroundColor: '#000000',
+    },
 });
